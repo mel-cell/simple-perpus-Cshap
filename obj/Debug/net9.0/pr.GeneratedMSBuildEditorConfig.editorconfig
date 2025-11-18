@@ -30,7 +30,10 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/mellow/code /C\#/perpus/pr/Views/AdminDashboardView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/home/mellow/code /C\#/perpus/pr/Views/CrudView.axaml]
+[/home/mellow/code /C\#/perpus/pr/Views/BukuView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/mellow/code /C\#/perpus/pr/Views/KategoriView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/mellow/code /C\#/perpus/pr/Views/LoginView.axaml]
@@ -48,5 +51,23 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/mellow/code /C\#/perpus/pr/Views/MemberDashboardView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/mellow/code /C\#/perpus/pr/Views/PeminjamanView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/mellow/code /C\#/perpus/pr/Views/PenerbitView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/mellow/code /C\#/perpus/pr/Views/PengembalianView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/mellow/code /C\#/perpus/pr/Views/PenulisView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/mellow/code /C\#/perpus/pr/Views/RakView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/mellow/code /C\#/perpus/pr/Views/RegisterView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/mellow/code /C\#/perpus/pr/Views/SiswaView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

@@ -36,7 +36,14 @@ public partial class App : Application
             services.AddTransient<RegisterViewModel>();
             services.AddTransient<AdminDashboardViewModel>();
             services.AddTransient<MemberDashboardViewModel>();
-            services.AddTransient<CrudViewModel>();
+            services.AddTransient<PenulisViewModel>();
+            services.AddTransient<KategoriViewModel>();
+            services.AddTransient<PenerbitViewModel>();
+            services.AddTransient<RakViewModel>();
+            services.AddTransient<SiswaViewModel>();
+            services.AddTransient<BukuViewModel>();
+            services.AddTransient<PeminjamanViewModel>();
+            services.AddTransient<PengembalianViewModel>();
             services.AddTransient<AdminDashboardContentViewModel>();
             services.AddTransient<MemberDashboardContentViewModel>();
 

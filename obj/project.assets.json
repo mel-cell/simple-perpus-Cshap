@@ -124,6 +124,22 @@
           }
         }
       },
+      "Avalonia.Controls.DataGrid/11.3.8": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.3.8"
+        },
+        "compile": {
+          "lib/net8.0/Avalonia.Controls.DataGrid.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Controls.DataGrid.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Avalonia.Desktop/11.3.8": {
         "type": "package",
         "dependencies": {
@@ -1103,6 +1119,25 @@
         "lib/net8.0/Avalonia.Controls.ColorPicker.xml",
         "lib/netstandard2.0/Avalonia.Controls.ColorPicker.dll",
         "lib/netstandard2.0/Avalonia.Controls.ColorPicker.xml"
+      ]
+    },
+    "Avalonia.Controls.DataGrid/11.3.8": {
+      "sha512": "El7fagpHH6Uaf/fsRtz3bKxMOt7a0n4mfbVZ9qOnv0UFCVKsFW/pjvrlmfX6Af3AYo8h2q+lPcCwzpwjQ0bLDg==",
+      "type": "package",
+      "path": "avalonia.controls.datagrid/11.3.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "avalonia.controls.datagrid.11.3.8.nupkg.sha512",
+        "avalonia.controls.datagrid.nuspec",
+        "lib/net6.0/Avalonia.Controls.DataGrid.dll",
+        "lib/net6.0/Avalonia.Controls.DataGrid.xml",
+        "lib/net8.0/Avalonia.Controls.DataGrid.dll",
+        "lib/net8.0/Avalonia.Controls.DataGrid.xml",
+        "lib/netstandard2.0/Avalonia.Controls.DataGrid.dll",
+        "lib/netstandard2.0/Avalonia.Controls.DataGrid.xml",
+        "readme.md"
       ]
     },
     "Avalonia.Desktop/11.3.8": {
@@ -2204,6 +2239,7 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "Avalonia >= 11.3.8",
+      "Avalonia.Controls.DataGrid >= 11.3.8",
       "Avalonia.Desktop >= 11.3.8",
       "Avalonia.Diagnostics >= 11.3.8",
       "Avalonia.Fonts.Inter >= 11.3.8",
@@ -2265,6 +2301,11 @@
             "version": "[11.3.8, )",
             "versionCentrallyManaged": true
           },
+          "Avalonia.Controls.DataGrid": {
+            "target": "Package",
+            "version": "[11.3.8, )",
+            "versionCentrallyManaged": true
+          },
           "Avalonia.Desktop": {
             "target": "Package",
             "version": "[11.3.8, )",
@@ -2318,6 +2359,7 @@
         },
         "centralPackageVersions": {
           "Avalonia": "11.3.8",
+          "Avalonia.Controls.DataGrid": "11.3.8",
           "Avalonia.Desktop": "11.3.8",
           "Avalonia.Diagnostics": "11.3.8",
           "Avalonia.Fonts.Inter": "11.3.8",

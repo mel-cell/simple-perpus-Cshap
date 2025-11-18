@@ -85,8 +85,8 @@ namespace pr.ViewModels
             }
             catch (Exception ex)
             {
-                string errorMessage = ex.Message;
-                Exception innerEx = ex.InnerException;
+                string errorMessage = ex.Message ?? "Unknown error";
+                Exception? innerEx = ex.InnerException;
                 while (innerEx != null)
                 {
                     errorMessage += $"\n--> Inner Error: {innerEx.Message}";
@@ -112,17 +112,15 @@ namespace pr.ViewModels
             // 2. Loop di C# untuk menemukan angka ID terbesar
             foreach (var id in allUserIds)
             {
-                if (id != null)
+                if (id == null) continue;
+                // Ambil bagian angka dari "User123" -> "123"
+                string numberPart = id.Substring(4); // "User" ada 4 karakter
+                
+                if (int.TryParse(numberPart, out int currentId))
                 {
-                    // Ambil bagian angka dari "User123" -> "123"
-                    string numberPart = id.Substring(4); // "User" ada 4 karakter
-                    
-                    if (int.TryParse(numberPart, out int currentId))
+                    if (currentId > maxId)
                     {
-                        if (currentId > maxId)
-                        {
-                            maxId = currentId; // Temukan ID numerik terbesar
-                        }
+                        maxId = currentId; // Temukan ID numerik terbesar
                     }
                 }
             }

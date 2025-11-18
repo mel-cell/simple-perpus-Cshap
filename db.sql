@@ -60,7 +60,8 @@ CREATE TABLE buku (
     -- Catatan: ISBN modern biasanya 13 karakter (CHAR(13))
     buku_isbn CHAR(10) NOT NULL,
     buku_thnterbit CHAR(4) NOT NULL,
-    
+    buku_stok INT NOT NULL DEFAULT 0,
+
     -- Mendefinisikan Foreign Keys
     CONSTRAINT fk_penulis FOREIGN KEY (buku_penulis_id) REFERENCES penulis(penulis_id),
     CONSTRAINT fk_kategori FOREIGN KEY (buku_kategori_id) REFERENCES kategori(kategori_id),

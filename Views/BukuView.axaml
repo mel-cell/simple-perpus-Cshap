@@ -1,0 +1,100 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:pr.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="pr.Views.BukuView"
+             x:DataType="vm:BukuViewModel"
+             Background="#FFEEEEEE">
+    <StackPanel>
+        <TextBlock Text="{Binding ErrorMessage}" 
+                   IsVisible="{Binding ErrorMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+                   Foreground="Red" Margin="10" TextWrapping="Wrap"/>
+        <Grid ColumnDefinitions="400,*">
+            <Border Grid.Column="0" Background="White" Margin="10" CornerRadius="5">
+                <ScrollViewer>
+                    <StackPanel Margin="15">
+                        <TextBlock Text="Form Buku" FontSize="18" FontWeight="Bold" Margin="0,0,0,15" Foreground="Black" />
+
+                        <TextBlock Text="Judul Buku:" Margin="0,0,0,5" Foreground="Black" />
+                        <TextBox Text="{Binding BukuJudul}" Margin="0,0,0,10" />
+
+                        <TextBlock Text="Penulis:" Margin="0,0,0,5" Foreground="Black" />
+                        <ComboBox ItemsSource="{Binding PenulisList}"
+                                  SelectedItem="{Binding SelectedPenulis}"
+                                  DisplayMemberBinding="{Binding PenulisNama}"
+                                  Margin="0,0,0,10" />
+
+                        <TextBlock Text="Penerbit:" Margin="0,0,0,5" Foreground="Black" />
+                        <ComboBox ItemsSource="{Binding PenerbitList}"
+                                  SelectedItem="{Binding SelectedPenerbit}"
+                                  DisplayMemberBinding="{Binding PenerbitNama}"
+                                  Margin="0,0,0,10" />
+
+                        <TextBlock Text="Kategori:" Margin="0,0,0,5" Foreground="Black" />
+                        <ComboBox ItemsSource="{Binding KategoriList}"
+                                  SelectedItem="{Binding SelectedKategori}"
+                                  DisplayMemberBinding="{Binding KategoriNama}"
+                                  Margin="0,0,0,10" />
+
+                        <TextBlock Text="Rak:" Margin="0,0,0,5" Foreground="Black" />
+                        <ComboBox ItemsSource="{Binding RakList}"
+                                  SelectedItem="{Binding SelectedRak}"
+                                  DisplayMemberBinding="{Binding RakNama}"
+                                  Margin="0,0,0,10" />
+
+                        <TextBlock Text="Tahun Terbit:" Margin="0,0,0,5" Foreground="Black" />
+                        <TextBox Text="{Binding BukuTahun}" Margin="0,0,0,10" />
+
+                        <TextBlock Text="Stok:" Margin="0,0,0,5" Foreground="Black" />
+                        <TextBox Text="{Binding BukuStok}" Margin="0,0,0,20" />
+
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <Button Content="🆕 CREATE" Command="{Binding InsertAsyncCommand}" Margin="0,0,10,0" Background="Green" Foreground="White" FontWeight="Bold" Padding="15,5" />
+                            <Button Content="✏️ UPDATE" Command="{Binding UpdateAsyncCommand}" Margin="0,0,10,0" Background="Blue" Foreground="White" FontWeight="Bold" Padding="15,5" />
+                            <Button Content="🗑️ DELETE" Command="{Binding DeleteAsyncCommand}" Background="Red" Foreground="White" FontWeight="Bold" Padding="15,5" />
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+
+            <Border Grid.Column="1" Background="White" Margin="10" CornerRadius="5" BorderBrush="LightGray" BorderThickness="1">
+                <StackPanel Margin="15">
+                    <TextBlock Text="Data Buku" FontSize="18" FontWeight="Bold" Margin="0,0,0,15" Foreground="Black" />
+
+                    <TextBox Text="{Binding SearchText}" Watermark="Cari buku..." Margin="0,0,0,15" />
+
+                    <DataGrid ItemsSource="{Binding BukuList}"
+                              SelectedItem="{Binding SelectedBuku}"
+                              AutoGenerateColumns="False"
+                              IsReadOnly="True"
+                              GridLinesVisibility="All"
+                              BorderBrush="Gray"
+                              BorderThickness="1">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding BukuId}" Width="80" Foreground="Black" />
+                            <DataGridTextColumn Header="Judul" Binding="{Binding BukuJudul}" Width="150" Foreground="Black" />
+                            <DataGridTextColumn Header="Penulis" Binding="{Binding BukuPenulis}" Width="120" Foreground="Black" />
+                            <DataGridTextColumn Header="Penerbit" Binding="{Binding BukuPenerbit}" Width="120" Foreground="Black" />
+                            <DataGridTextColumn Header="Tahun" Binding="{Binding BukuTahun}" Width="80" Foreground="Black" />
+                            <DataGridTextColumn Header="Kategori" Binding="{Binding BukuKategori}" Width="100" Foreground="Black" />
+                            <DataGridTextColumn Header="Rak" Binding="{Binding BukuRak}" Width="80" Foreground="Black" />
+                            <DataGridTextColumn Header="Stok" Binding="{Binding BukuStok}" Width="60" Foreground="Black" />
+                            <DataGridTemplateColumn Header="Actions" Width="120">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Content="Update" Command="{Binding DataContext.UpdateBukuCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" Margin="0,0,5,0" Background="Blue" Foreground="White" />
+                                            <Button Content="Delete" Command="{Binding DataContext.DeleteBukuCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" Background="Red" Foreground="White" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </StackPanel>
+</UserControl>

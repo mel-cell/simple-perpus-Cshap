@@ -4,6 +4,8 @@ using pr.Services;
 using pr.Data;
 using pr.Models;
 using System;
+using Avalonia.Controls;
+using pr.Views;
 
 namespace pr.ViewModels;
 
@@ -30,61 +32,205 @@ public partial class AdminDashboardViewModel : ViewModelBase
     }
 
     [RelayCommand]
-    private void ShowDashboard()
+public void ShowDashboard()
     {
         CurrentView = new AdminDashboardContentViewModel();
     }
 
     [RelayCommand]
-    private void ShowMasterBuku()
+    public void ShowMasterBuku()
     {
-        CurrentView = new CrudViewModel(_dbContext, typeof(Buku), "BukuId");
+        WelcomeMessage = "Master Buku clicked";
+        ErrorMessage = string.Empty;
+        try
+        {
+            var vm = new BukuViewModel(_dbContext);
+            var window = new Window
+            {
+                Title = "Master Buku",
+                Content = new BukuView { DataContext = vm },
+                Width = 1200,
+                Height = 700,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen
+            };
+            window.Show();
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Error opening Buku window: {ex.Message}";
+        }
     }
 
     [RelayCommand]
-    private void ShowMasterPenulis()
+    public void ShowMasterPenulis()
     {
-        CurrentView = new CrudViewModel(_dbContext, typeof(Penulis), "PenulisId");
+        WelcomeMessage = "Master Penulis clicked";
+        ErrorMessage = string.Empty;
+        try
+        {
+            var vm = new PenulisViewModel(_dbContext);
+            var window = new Window
+            {
+                Title = "Master Penulis",
+                Content = new PenulisView { DataContext = vm },
+                Width = 1000,
+                Height = 600,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen
+            };
+            window.Show();
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Error opening Penulis window: {ex.Message}";
+        }
     }
 
     [RelayCommand]
-    private void ShowMasterPenerbit()
+    public void ShowMasterPenerbit()
     {
-        CurrentView = new CrudViewModel(_dbContext, typeof(Penerbit), "PenerbitId");
+        WelcomeMessage = "Master Penerbit clicked";
+        ErrorMessage = string.Empty;
+        try
+        {
+            var vm = new PenerbitViewModel(_dbContext);
+            var window = new Window
+            {
+                Title = "Master Penerbit",
+                Content = new PenerbitView { DataContext = vm },
+                Width = 1000,
+                Height = 600,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen
+            };
+            window.Show();
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Error opening Penerbit window: {ex.Message}";
+        }
     }
 
     [RelayCommand]
-    private void ShowMasterRak()
+    public void ShowMasterRak()
     {
-        CurrentView = new CrudViewModel(_dbContext, typeof(Rak), "RakId");
+        WelcomeMessage = "Master Rak clicked";
+        ErrorMessage = string.Empty;
+        try
+        {
+            var vm = new RakViewModel(_dbContext);
+            var window = new Window
+            {
+                Title = "Master Rak",
+                Content = new RakView { DataContext = vm },
+                Width = 1000,
+                Height = 600,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen
+            };
+            window.Show();
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Error opening Rak window: {ex.Message}";
+        }
     }
 
     [RelayCommand]
-    private void ShowMasterSiswa()
+    public void ShowMasterSiswa()
     {
-        CurrentView = new CrudViewModel(_dbContext, typeof(Siswa), "SiswaId");
+        WelcomeMessage = "Master Siswa clicked";
+        ErrorMessage = string.Empty;
+        try
+        {
+            var vm = new SiswaViewModel(_dbContext);
+            var window = new Window
+            {
+                Title = "Master Siswa",
+                Content = new SiswaView { DataContext = vm },
+                Width = 1000,
+                Height = 600,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen
+            };
+            window.Show();
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Error opening Siswa window: {ex.Message}";
+        }
     }
 
     [RelayCommand]
-    private void ShowKategori()
+    public void ShowKategori()
     {
-        CurrentView = new CrudViewModel(_dbContext, typeof(Kategori), "KategoriId");
+        WelcomeMessage = "Kategori clicked";
+        ErrorMessage = string.Empty;
+        try
+        {
+            var vm = new KategoriViewModel(_dbContext);
+            var window = new Window
+            {
+                Title = "Master Kategori",
+                Content = new KategoriView { DataContext = vm },
+                Width = 1000,
+                Height = 600,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen
+            };
+            window.Show();
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Error opening Kategori window: {ex.Message}";
+        }
     }
 
     [RelayCommand]
-    private void ShowPeminjaman()
+    public void ShowPeminjaman()
     {
-        CurrentView = new CrudViewModel(_dbContext, typeof(Peminjaman), "PeminjamanId");
+        WelcomeMessage = "Peminjaman clicked";
+        ErrorMessage = string.Empty;
+        try
+        {
+            var vm = new PeminjamanViewModel(_dbContext);
+            var window = new Window
+            {
+                Title = "Peminjaman Buku",
+                Content = new PeminjamanView { DataContext = vm },
+                Width = 1200,
+                Height = 700,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen
+            };
+            window.Show();
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Error opening Peminjaman window: {ex.Message}";
+        }
     }
 
     [RelayCommand]
-    private void ShowPengembalian()
+    public void ShowPengembalian()
     {
-        CurrentView = new CrudViewModel(_dbContext, typeof(Pengembalian), "PengembalianId");
+        WelcomeMessage = "Pengembalian clicked";
+        ErrorMessage = string.Empty;
+        try
+        {
+            var vm = new PengembalianViewModel(_dbContext);
+            var window = new Window
+            {
+                Title = "Pengembalian Buku",
+                Content = new PengembalianView { DataContext = vm },
+                Width = 1200,
+                Height = 700,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen
+            };
+            window.Show();
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Error opening Pengembalian window: {ex.Message}";
+        }
     }
 
     [RelayCommand]
-    private void Logout()
+    public void Logout()
     {
         _sessionService.ClearCurrentUser();
         // Navigation handled by MainViewModel

@@ -1,15 +1,58 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:views="using:pr.Views"
+             xmlns:vm="using:pr.ViewModels"
              x:Class="pr.App"
-             xmlns:local="using:pr"
              RequestedThemeVariant="Default">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
-        <local:ViewLocator/>
+        <DataTemplate DataType="{x:Type vm:LoginViewModel}">
+            <views:LoginView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:RegisterViewModel}">
+            <views:RegisterView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:AdminDashboardViewModel}">
+            <views:AdminDashboardView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:AdminDashboardContentViewModel}">
+            <views:AdminDashboardContentView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MemberDashboardViewModel}">
+            <views:MemberDashboardView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MemberDashboardContentViewModel}">
+            <views:MemberDashboardContentView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:PenulisViewModel}">
+            <views:PenulisView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:KategoriViewModel}">
+            <views:KategoriView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:PenerbitViewModel}">
+            <views:PenerbitView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:RakViewModel}">
+            <views:RakView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SiswaViewModel}">
+            <views:SiswaView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:BukuViewModel}">
+            <views:BukuView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:PeminjamanViewModel}">
+            <views:PeminjamanView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:PengembalianViewModel}">
+            <views:PengembalianView />
+        </DataTemplate>
     </Application.DataTemplates>
   
     <Application.Styles>
         <FluentTheme />
+        <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
     </Application.Styles>
 </Application>

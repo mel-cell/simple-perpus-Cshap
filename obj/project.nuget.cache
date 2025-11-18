@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JQR/vWHgGXs=",
+  "dgSpecHash": "gdOGv7uJzlg=",
   "success": true,
   "projectFilePath": "/home/mellow/code /C#/perpus/pr/pr.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "/home/mellow/.nuget/packages/avalonia.angle.windows.natives/2.1.25547.20250602/avalonia.angle.windows.natives.2.1.25547.20250602.nupkg.sha512",
     "/home/mellow/.nuget/packages/avalonia.buildservices/11.3.1/avalonia.buildservices.11.3.1.nupkg.sha512",
     "/home/mellow/.nuget/packages/avalonia.controls.colorpicker/11.3.8/avalonia.controls.colorpicker.11.3.8.nupkg.sha512",
+    "/home/mellow/.nuget/packages/avalonia.controls.datagrid/11.3.8/avalonia.controls.datagrid.11.3.8.nupkg.sha512",
     "/home/mellow/.nuget/packages/avalonia.desktop/11.3.8/avalonia.desktop.11.3.8.nupkg.sha512",
     "/home/mellow/.nuget/packages/avalonia.diagnostics/11.3.8/avalonia.diagnostics.11.3.8.nupkg.sha512",
     "/home/mellow/.nuget/packages/avalonia.fonts.inter/11.3.8/avalonia.fonts.inter.11.3.8.nupkg.sha512",
