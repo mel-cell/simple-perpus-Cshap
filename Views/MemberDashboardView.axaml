@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:pr.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="pr.Views.MemberDashboardView"
+             x:DataType="vm:MemberDashboardViewModel"
+             Background="White">
+  <SplitView IsPaneOpen="True" DisplayMode="Inline" OpenPaneLength="200">
+    <SplitView.Pane>
+      <Border Background="LightGray" BorderBrush="Gray" BorderThickness="1">
+        <StackPanel Margin="10">
+          <TextBlock Text="{Binding WelcomeMessage}" FontWeight="Bold" Margin="0,0,0,20" Foreground="Black" />
+          <Button Content="Dashboard" Command="{Binding ShowDashboardCommand}" Margin="0,0,0,10" Foreground="Black" Background="Transparent" BorderThickness="0" HorizontalContentAlignment="Left" Padding="5">
+            <Button.Styles>
+              <Style Selector="Button:pointerover">
+                <Setter Property="Background" Value="LightBlue" />
+              </Style>
+            </Button.Styles>
+          </Button>
+          <Button Content="Logout" Command="{Binding LogoutCommand}" Margin="20,0,0,0" Foreground="Red" Background="Transparent" BorderThickness="0" HorizontalContentAlignment="Left" Padding="5">
+            <Button.Styles>
+              <Style Selector="Button:pointerover">
+                <Setter Property="Background" Value="LightCoral" />
+              </Style>
+            </Button.Styles>
+          </Button>
+        </StackPanel>
+      </Border>
+    </SplitView.Pane>
+    <SplitView.Content>
+      <Border Background="White" BorderBrush="LightGray" BorderThickness="1" Margin="10">
+        <ContentControl Content="{Binding CurrentView}" />
+      </Border>
+    </SplitView.Content>
+  </SplitView>
+</UserControl>
